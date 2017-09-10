@@ -6,12 +6,14 @@ from bank_classes.customer_class import Customer
 from bank_classes.bank_class import Bank
 
 def prompt():
+	'''Shows initial prompt'''
 	print("""1. New Customer
 2. Existing Customer
 3. Exit""")
 
 
 def customer_sign_in():
+	'''customer sign in prompt'''
 	print("Please select an answer:")
 	print("""1. New Customer
 2. Existing Customer
@@ -31,6 +33,7 @@ def customer_sign_in():
 
 
 def home_screen(Bank):
+	'''First screen the customer or bank employee will see'''
 	customer = 1
 	name = "" 
 	while(customer):
@@ -77,6 +80,7 @@ Otherwise, press 3 to exit. Thank you.''')
 
 
 def menu_choice(name):
+	'''Where you make your choice'''
 	if len(name) < 2:
 		print("Invalid name")
 		choice = 6
@@ -97,7 +101,7 @@ def menu_choice(name):
 
 
 def menu_choice_execution(Bank, name , choice):
-	
+	'''How you execute your menu choice'''
 	if choice != 6:
 		account_type = input("Input account of interest> ")
 	if choice == 1:
@@ -127,6 +131,7 @@ def menu_choice_execution(Bank, name , choice):
 	return(0)
 
 def bank_deposit(Bank, customer_id, account_type):
+	'''Where the deposit is made'''
 	for i in (Bank.customers):
 		if customer_id == i.name:
 			Bank.deposit(i, account_type)
@@ -135,6 +140,7 @@ def bank_deposit(Bank, customer_id, account_type):
 	return(0)
 
 def bank_withdrawal(Bank, customer_id, account_type):
+	'''where the withdrawal is made'''
 	for i in (Bank.customers):
 		if customer_id == i.name:
 			Bank.withdrawal(i, account_type)
@@ -154,6 +160,7 @@ def show_balance(Bank, customer_id, account_type):
 
 	
 def mainloop():
+	'''main loop of program. incorporates all the functions'''
 	bank1 = Bank("Banc de l'Amerique")		
 	customer = 1 
 	while(customer):
