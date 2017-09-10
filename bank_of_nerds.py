@@ -12,16 +12,12 @@ def prompt():
 
 
 def customer_sign_in():
-	#To Do: add a try except to avoid ctrl c ctrl d and out of range 
-	#and letters
 	print("Please select an answer:")
 	print("""1. New Customer
 2. Existing Customer
 3. Exit""")
 	while(1):
 		answer = input()
-	#	if(int(answer) == 11):
-	#		print("pass test")
 		if(answer.isalpha() or int(answer) < 1): 
 			print("Incorrect entry, please try again")	
 			prompt()			
