@@ -34,10 +34,8 @@ class Account():
 		
 		else:
 			return("account does not exist")
-		#return(result)
-	#	else:
-	#		print("Do not have this account")
-	#		return(0)
+		
+
 
 if __name__ == "__main__":
 	checking = Account("checking")
