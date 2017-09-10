@@ -2,12 +2,12 @@
 
 from decimal import Decimal
 from bank_classes.customer_class import Customer
-#from customer_class import Customer
+
 
 
 
 class Bank():
-#	person = Customer()
+
 	def __init__(self, bank_name):
 		self._bank_name = bank_name
 		self.customers = []
@@ -96,7 +96,7 @@ class Bank():
 			person.withdrawal(money, account_type)
 
 	
-	#	person.withdrawal(money, account_type)	
+		
 
 	def __str__(self):
 		result = ""
@@ -115,53 +115,4 @@ class Bank():
 	def test():
 		print("Created")	
 
-
-if __name__ == "__main__":
-#	print("Test")
-	bank1 = Bank("Bank of America")
-#	test()
-#	person = create_customer(self)
-	#person1 = Customer()
-	aron = Customer()
-	#bank1.add_customer(person1)
-	bank1.add_customer(aron)
-	savings = aron.create_account("savings")
-	checking = aron.create_account("checking")
-	save = "savings"
-	check = "checking"
-	#aron.deposit(1.10, savings)
-	bank1.deposit(aron, save)
-	print("\n\n\n\n")
-	print(bank1.customers_list())
-	bank1.withdrawal(aron, check)
-	print("\n\n\n\n")
-	print("Accounts ", bank1.get_customer_accounts(aron))
-
-#	print(aron)
-
-
-#	print(bank1)
-#	bank1.add_person_account(person2, "Savings")
-#	bank1.add_person_account(person2, "Checking")
-
-
-
-#	print(bank1)
-
-#	print(str(person))
-	#print(Bank1.name)
-	#print("This is person being printed", person.name)
-#	person.add_account("Saving")
-#	print("Adding customer now")
-#	Bank1.add_customer(person)
-#	print("This is second customer")
-#	Bank1.show_customers()
-#	print("/n/nAdd 2nd  customer information")
-#	print("This is customer's account information for person1")
-#	Bank1.show_customer_accounts(person)
-	#print("This is all for person 2customer account information")
-#	bank1.add_customer(person2)
-#	print(bank1.show_customer_accounts(person2))
-
-	
 
