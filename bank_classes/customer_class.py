@@ -4,8 +4,17 @@ from bank_classes.accounts import Account
 
 class Customer():
 	def __init__(self):
-		first_name = input("print your first name:  ")
+		y = 1
+		first_name = input("print your full name:  ")
 		self._first_name = first_name
+		while(y):
+			if (self._first_name).isnumeric() or len(self._first_name) < 3:
+				print("Name contained numbers, Invalid")
+				self._first_name = input("print your name")
+				print(self._first_name)
+			else:
+				y = 0
+		#self._first_name = first_name
 		self.accounts = []
 		#self._last_name = last_name
 		#self._DOB = DOB
@@ -15,6 +24,11 @@ class Customer():
 	def name(self):
 		return self._first_name
 
+	@name.setter
+	def name(self, first_name):
+		if len(first_name) < 3 or first_name.isnumeric():
+			name(first_name)
+		self._first_name = first_name
 
 	def create_account(self, account_type):
 		account = Account(account_type)

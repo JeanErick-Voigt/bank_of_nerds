@@ -27,7 +27,6 @@ def customer_sign_in():
 			prompt()			
 
 		elif((int(answer) > 3) and ((int(answer) != 11) and (int(answer) != 22))):
-			print("ins this one")
 			print("Incorrect entry, please try again")
 			prompt()
 		else:
@@ -47,12 +46,13 @@ def home_screen(Bank):
 		elif(sign_in == 2):
 			print("please Enter your name")
 			customer = input()
+			if customer.isnumeric():
+				print("Name contained numbers")
+				continue
 			for i in Bank.customers:
-				print("In second option")
 				if customer == i.name:
 					return(customer)
 				else:
-					print("Debug statement")
 					customer = 0
 		
 		elif(sign_in == 1):
@@ -71,6 +71,7 @@ Otherwise, press 3 to exit. Thank you.''')
 			print("Showing all bank customers and account information")
 			print(Bank)
 			customer = 0
+			name = "zzz"
 	
 		else:
 			print("Enter customer name")
@@ -82,6 +83,9 @@ Otherwise, press 3 to exit. Thank you.''')
 def menu_choice(name):
 	if len(name) < 2:
 		print("Invalid name")
+		choice = 6
+		return choice
+	elif name == "zzz":
 		choice = 6
 		return choice
 	print("Hi {}, Welcome to Banc de l'Amerique! What would you like to do?".format(name))
@@ -97,7 +101,9 @@ def menu_choice(name):
 
 
 def menu_choice_execution(Bank, name , choice):
-	account_type = input("Input account of interest> ")
+	
+	if choice != 6:
+		account_type = input("Input account of interest> ")
 	if choice == 1:
 		bank_deposit(Bank, name, account_type)
 	
@@ -162,7 +168,6 @@ def mainloop():
 			result = menu_choice_execution(bank1, name, choice)
 			if result == 6:
 				transaction = 0
-				os.system('clear')
 			else:
 				print("Do you have any more transactions")
 				answer = input("Yes or No")
@@ -195,22 +200,9 @@ def mainloop():
 if __name__ == "__main__":
 	try:
 		mainloop()
-	except KeyboardInterrupt:
+	except (KeyboardInterrupt, ValueError) as exception:
 		os.system('clear')
 		print("Improper attempt to exit. Please exit by either ending session or exitting through interface")
 		mainloop()	
 
 	
-#print("This is name", name)
-#account_type = input("Which account to deposit in ")
-
-
-#bank_deposit(bank1, name, account_type)
-
-#print(bank1)
-#rint("\n\n")
-'''while(customer):
-	sign_in = customer_sign_in
-	print(sign_in)
-	customer = 0
-'''

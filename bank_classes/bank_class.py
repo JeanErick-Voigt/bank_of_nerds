@@ -100,7 +100,7 @@ class Bank():
 
 	def __str__(self):
 		result = ""
-		print("*" * 30, "Inside str function")
+		print("*" * 30)
 		result = ("Full list of bank clieints and info\n")
 		li = []
 		if(not self.customers):
